@@ -1,3 +1,2 @@
-This is Arjun's project on the American National Election Studies Dataset for the Coding School Summer Research Program 2022.
-
-Here are some possible research questions:
+# ANES-dataset-analysis
+Student projects to analyze the ANES dataset using data science skills.
