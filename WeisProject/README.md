@@ -6,5 +6,7 @@ this is Wei's project on the ANES dataset for the coding school summer research 
 
 [dataset guide link](https://electionstudies.org/wp-content/uploads/2021/07/anes_timeseries_2020_methodology_userguidecodebook_20210719.pdf)
 
-research question brainstorm: 
-- i have no idea :(
+
+# research question brainstorm
+* variables that interest me:
+  + 
