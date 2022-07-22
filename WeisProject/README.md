@@ -1,6 +1,6 @@
 ## Wei's Project
 
-this is Wei's project on the ANES dataset for the coding school summer research program 2022. ANES stands for American National Election Studies, the data is gathered from surveys and polls for US eligible voters both pre- and post-election.
+this is Wei's project on the ANES dataset for the coding school summer research program 2022. ANES stands for American National Election Studies, the data is gathered from surveys and polls for both pre- and post-election.
 
 [dataset link](https://electionstudies.org/data-center/2020-time-series-study/)
 
