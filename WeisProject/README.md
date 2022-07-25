@@ -8,6 +8,30 @@ this is wei's project on the ANES dataset for the coding school summer research 
 
 [dataset guide link (survey variables)](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf) 
 
+### FINALIZED RESEARCH QUESTION AND HYPOTHESIS
+***do people who don't support abortion also not support the death penalty due to the logic of "pro-life" ideals? Or is the disapproval of abortion more closely tied to another factor like religion or culture?*** 
+<br>
+**null**: if someone doesn't support abortion, then they also won't support the death penalty because of their "pro-life" beliefs and no other factors
+<br>
+**my hypothesis**: if someone doesn't support abortion, then they will support the death penalty because their beliefs are tied to religion, not "pro-life" ideals.
+
+### final variables, all pre-election
+* abortion, V201336
+* importance of abortion, V201337
+* reaction if supreme court limited abortion rights, V201342x
+* opinion on death penalty, V201345x 
+* lib-cons self scale placement, V201200
+* liberal or conservative?, V201201
+* religion, V201435
+* state/location, V203001
+* sex, V201600
+* age (pre), V201507x
+* education level (pre), V201510
+* race and ethnicity (pre), V201549x
+* children (pre), V201567
+* where respondent grew up (pre), V201575
+* sexual orientation (pre), V201601
+
 # research question brainstorm
 * non-survey variables that interest me:
   + state/location, V203001
@@ -197,14 +221,12 @@ this is wei's project on the ANES dataset for the coding school summer research 
   + discrimination faced because of race/ethnicity, V202537
   + discrimination faced because of gender, V202538
   
-# reminder: 
-
-And a few questions to think about when writing a research question:
-* Which variable do you want to try to *predict*?
-* What categories do you most want to *distinguish between*?
-* Which independent variables are you interested in investigating their *effects*?
-* What are some ways you can *group the data* or some variables together?
-* What *change* or *difference* are you most interested in?
+## a few questions to think about when writing a research question:
+* Which variable do you want to try to **predict**?
+* What categories do you most want to **distinguish between**?
+* Which independent variables are you interested in investigating their **effects**?
+* What are some ways you can **group the data** or some variables together?
+* What **change** or **difference** are you most interested in?
   
   
 ## SAMPLE QUESTIONS
@@ -215,6 +237,7 @@ And a few questions to think about when writing a research question:
 * do people who dont support abortion also not support the death penalty due to the logic of "pro-life" ideas? Or is the disapproval of abortion tied to another factor like religion or culture?
 * how does religion affect approval of the lgbtq+ community, are there other factors that are of stronger influence?
 * according to each demographic, which race/ethnicity is the most hardworking and which is the most violent, how do the different opinions compare across demographics and within one demographic?
+
   
   
   
