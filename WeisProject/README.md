@@ -17,12 +17,62 @@ this is wei's project on the ANES dataset for the coding school summer research 
 
 ### final variables, all pre-election
 * abortion, V201336
+  + refused (-9)
+  + don't know (-8)
+  + By law, abortion should never be permitted (1)
+  + The law should permit abortion only in case of rape, incest, or when the woman’s life is in danger (2)
+  + The law should permit abortion other than for rape/incest/danger to woman but only after need clearly established (3)
+  +  By law, a woman should always be able to obtain an abortion as a matter of personal choice (4)
+  + other (5)
 * importance of abortion, V201337
+  + refused (-9)
+  + don't know (-8)
+  + not at all important (1)
+  + not too important (2)
+  + somewhat important (3)
+  + very important (4)
+  + extremely important (5)
 * reaction if supreme court limited abortion rights, V201342x
+  + DK/RF (-2)
+  + extremely pleased (1)
+  + moderately pleased (2)
+  + a little pleased (3)
+  + neither pleased nor upset (4)
+  + a little upset (5)
+  + moderately upset (6)
+  + extremely upset (7)
 * opinion on death penalty, V201345x 
+  + DK/RF (-2)
+  + favor strongly (1)
+  + favor not strongly (2)
+  + oppose not strongly (3)
+  + oppose strongly (4)
 * lib-cons self scale placement, V201200
-* liberal or conservative?, V201201
+  + refused (-9)
+  + don't know (-8)
+  + extremely liberal (1)
+  + liberal (2)
+  + slightly liberal (3)
+  + moderate; middle of the road (4)
+  + slightly conservative (5)
+  + conservative (6)
+  + extremely conservative (7)
+  + haven't thought much about this (99)
 * religion, V201435
+  + refused (-9)
+  + don't know (-8)
+  + protestant (1)
+  + roman catholic (2)
+  + orthodox christian (3)
+  + latter-day saints (4)
+  + jewish (5)
+  + muslim (6)
+  + buddhist (7)
+  + hindu (8)
+  + athiest (9)
+  + agnostic (10)
+  + something else (11)
+  + nothing in particular (12)
 * state/location, V203001
 * sex, V201600
 * age (pre), V201507x
