@@ -27,7 +27,7 @@ this is wei's project on the ANES dataset for the coding school summer research 
   + where respondent grew up (pre), V201575
   + sexual orientation (pre), V201601
   + total family income, V201617x
-  + # of owned guns, V201628
+  + number of owned guns, V201628
   + state of registration, V202054x
   + party of registration, V202065x
   
@@ -169,6 +169,52 @@ this is wei's project on the ANES dataset for the coding school summer research 
   + black scale placement, V202480
   + illegal immigrant scale placement, V202481
   + white scale placement, V202482
+  + stereotype scale (hardworking)
+    + white ppl, V202515
+    + black ppl, V202516
+    + hispanic americans, V202517
+    + hispanic ppl, V202518
+    + asian americans, V202519
+    + asian ppl, V202520
+  + stereotype scale (violent)
+    + white ppl, V202521
+    + black ppl, V202522
+    + hispanic americans, V202523
+    + hispanic ppl, V202524
+    + asian americans, V202525
+    + asian ppl, V202526
+  + discrimination scale
+    + black ppl, V202527
+    + hispanic ppl, V202528
+    + asian ppl, V202529
+    + white ppl, V202530
+    + muslims, V202531
+    + christians, V202532
+    + gays, V202533
+    + women, V202534
+    + men, V202535
+    + transfolk, V202536
+  + discrimination faced because of race/ethnicity, V202537
+  + discrimination faced because of gender, V202538
+  
+# reminder: 
+
+And a few questions to think about when writing a research question:
+* Which variable do you want to try to *predict*?
+* What categories do you most want to *distinguish between*?
+* Which independent variables are you interested in investigating their *effects*?
+* What are some ways you can *group the data* or some variables together?
+* What *change* or *difference* are you most interested in?
+  
+  
+## SAMPLE QUESTIONS
+* do republicans and democrats disagree with each other more than they agree with each other or is it the other way around? On what subjects do they agree on, on what subjects do they disagree on, how do other factors like race and gender affect their opinions. For example, are white republicans more conservative than BIPOC republicans?
+* which variables help predict whether someone is a republican or democrat?
+* how does race and gender contribute to income?
+* what demographic trusts the government the most and what demographic trusts the government the least? which variables contribute the greatest to this opinion?
+* do people who dont support abortion also not support the death penalty due to the logic of "pro-life" ideas? Or is the disapproval of abortion tied to another factor like religion or culture?
+* how does religion affect approval of the lgbtq+ community, are there other factors that are of stronger influence?
+* according to each demographic, which race/ethnicity is the most hardworking and which is the most violent, how do the different opinions compare across demographics and within one demographic?
   
   
   
