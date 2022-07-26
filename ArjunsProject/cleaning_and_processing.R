@@ -6,37 +6,10 @@ anes_finance = select(anes, V201018, V201502, V201503, V201594) %>%
   rename("registration_party" = V201018, "one_year_ago" = V201502, "next_year" = V201503, "current_situation" = V201594)
 
 # Give the values significant names
-anes_finance["registration_party"][anes_finance["registration_party"] == "-9"] <- "Refused"
-anes_finance["registration_party"][anes_finance["registration_party"] == "-8"] <- "Don't know"
-anes_finance["registration_party"][anes_finance["registration_party"] == "-1"] <- "Inapplicable"
-anes_finance["registration_party"][anes_finance["registration_party"] == "1"] <- "Democratic party"
-anes_finance["registration_party"][anes_finance["registration_party"] == "2"] <- "Republican party"
-anes_finance["registration_party"][anes_finance["registration_party"] == "4"] <- "None or 'independent'"
-anes_finance["registration_party"][anes_finance["registration_party"] == "5"] <- "Other"
-
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "-9"] <- "Refused"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "-8"] <- "Don't know"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "1"] <- "Much better off"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "2"] <- "Somewhat better off"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "3"] <- "About the same"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "4"] <- "Somewhat worse off"
-anes_finance["one_year_ago"][anes_finance["one_year_ago"] == "5"] <- "Much worse off"
-
-anes_finance["next_year"][anes_finance["next_year"] == "-9"] <- "Refused"
-anes_finance["next_year"][anes_finance["next_year"] == "-8"] <- "Don't know"
-anes_finance["next_year"][anes_finance["next_year"] == "1"] <- "Much better off"
-anes_finance["next_year"][anes_finance["next_year"] == "2"] <- "Somewhat better off"
-anes_finance["next_year"][anes_finance["next_year"] == "3"] <- "About the same"
-anes_finance["next_year"][anes_finance["next_year"] == "4"] <- "Somewhat worse off"
-anes_finance["next_year"][anes_finance["next_year"] == "5"] <- "Much worse off"
-
-anes_finance["current_situation"][anes_finance["current_situation"] == "-9"] <- "Refused"
-anes_finance["current_situation"][anes_finance["current_situation"] == "-8"] <- "Don't know"
-anes_finance["current_situation"][anes_finance["current_situation"] == "1"] <- "Extremely worried"
-anes_finance["current_situation"][anes_finance["current_situation"] == "2"] <- "Very worried"
-anes_finance["current_situation"][anes_finance["current_situation"] == "3"] <- "Moderately worried"
-anes_finance["current_situation"][anes_finance["current_situation"] == "4"] <- "A little worried"
-anes_finance["current_situation"][anes_finance["current_situation"] == "5"] <- "Not at all worried"
+anes_finance$registration_party <- recode(anes_finance$registration_party, "-9" = "Refused", "-8" = "Don't know", "-1" = "Inapplicable", "1" = "Democratic party", "2" = "Republican party", "4" = "None or 'independent'", "5" = "Other")
+anes_finance$one_year_ago <- recode(anes_finance$one_year_ago, "-9" = "Refused", "-8" = "Don't know", "1" = "Much better off", "2" = "Somewhat better off", "3" = "About the same", "4" = "Somewhat worse off", "5" = "Much worse off")
+anes_finance$next_year <- recode(anes_finance$next_year, "-9" = "Refused", "-8" = "Don't know", "1" = "Much better off", "2" = "Somewhat better off", "3" = "About the same", "4" = "Somewhat worse off", "5" = "Much worse off")
+anes_finance$current_situation <- recode(anes_finance$current_situation, "-9" = "Refused", "-8" = "Don't know", "1" = "Extremely worried", "2" = "Very worried", "3" = "Moderately worried", "4" = "A little worried", "5" = "Not at all worried")
 
 # Set the order of the categories in each column
 anes_finance$registration_party <- factor(anes_finance$registration_party, levels = c("Democratic party", "Republican party", "None or 'independent'", "Other", "Inapplicable", "Don't know", "Refused")) 
