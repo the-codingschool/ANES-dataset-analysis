@@ -1,5 +1,11 @@
 This is Arjun's project on the American National Election Studies Dataset for the Coding School Summer Research Program 2022.
 
-Here are some potential research questions:
+Mentor: Gustavo Novoa
 
-* How does a person's financial situation affect the political party that affiliate with?
+Research Question: How does a person's financial situation affect the political party that affiliate with?
+
+This research question is important because it can help make election poll predictions based on the financial situation of students.
+
+Dataset: https://electionstudies.org/data-center/2020-time-series-study/
+
+This data is from an American National Election Studies 2020 Time Series Study. It consists of information from a mix of pre-election and post-election surveys, which were given to U.S. eligible voters.
