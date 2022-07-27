@@ -1,6 +1,6 @@
 ## Wei's Project
 
-this is wei's project on the ANES dataset for the coding school summer research program 2022. ANES stands for American National Election Studies, the data is gathered from surveys and polls for US eligible voters both pre- and post-election.
+this is wei's project on the ANES dataset for the coding school summer research program 2022. My mentor is Gustavo. ANES stands for American National Election Studies, the data is gathered from surveys and polls for US eligible voters both pre- and post-election. My project focuses on the topic of opinions on abortion.
 
 [dataset link](https://electionstudies.org/data-center/2020-time-series-study/)
 
@@ -11,9 +11,9 @@ this is wei's project on the ANES dataset for the coding school summer research 
 ### FINALIZED RESEARCH QUESTION AND HYPOTHESIS
 ***do people who don't support abortion also not support the death penalty due to the logic of "pro-life" ideals? Or is the disapproval of abortion more closely tied to another factor like religion or culture?*** 
 <br>
-**null**: if someone doesn't support abortion, then they also won't support the death penalty because of their "pro-life" beliefs and no other factors
+**null**: a person's opinion on abortion and the death penalty are unrelated and have no correlation 
 <br>
-**my hypothesis**: if someone doesn't support abortion, then they will support the death penalty because their beliefs are tied to religion, not "pro-life" ideals.
+**alternate hypothesis**:a person's opinion on abortion and the death penalty are related and not independent of each other since both views are pro-life
 
 ### final variables, all pre-election
 * abortion, V201336
