@@ -7,3 +7,6 @@ Possible research questions
 
 
 Research question: Can we predict a person's vote for president based on their responses in ANES' poll?
+
+NULL HYPOTHESIS: There is no relation between a person's vote for president and their responses in ANES' poll
+ALTERNATE: There is a relation between a person's vote for president and their responses in ANES' poll
