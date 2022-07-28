@@ -20,6 +20,9 @@ anes_finance$current_situation <- factor(anes_finance$current_situation, levels 
 # Filter out rows with the value "Don't know" for columns "one_year_ago" and "current_situation"
 anes_finance = filter(anes_finance, one_year_ago != "Don't know", current_situation != "Don't know")
 
+# Filter the registration_party column to only include the Democratic party and the Republican party
+anes_finance = filter(anes_finance, registration_party == c("Democratic party", "Republican party"))
+
 # Create visualizations with the subset
 ggplot(data = anes_finance, aes(x = one_year_ago, y = ..count.., fill = registration_party)) +
   geom_bar(position = "dodge", color = "black") +
