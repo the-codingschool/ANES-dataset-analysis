@@ -5,8 +5,7 @@ library(gbm)
 library(Metrics)
 
 #loading in csv file
-anes <- read.csv("ANES_losingmymind.csv")
-saveRDS(anes, "ANES_losingmymind.csv")
+anes <- read.csv("anesplease.csv")
 View(anes)
 
 #male/female opinions on abortion
@@ -157,5 +156,15 @@ ggplot(alwaysAge, aes(x = V201507x, y = ..count..)) +
        x = "age ranges") +
   scale_x_continuous(breaks = seq(from = 20, to = 80, by = 10)) +
   annotate("text", x = 37, y = 105, label = "ages inputed as 80 include all people 80 and older")
+
+
+
+
+
+
+
+
+
+
 
 
