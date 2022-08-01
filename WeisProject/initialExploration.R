@@ -112,7 +112,7 @@ ggplot(abrahamic, aes(x = as.factor(V201336), fill = as.factor(V201435))) +
 
 #ages, the number 80 represents ages 80 and older
 ages <- select(anes, V201336, V201507x)
-ages <- filter(ages, V201336 > 0, V201336 < 5, V201507x > 0)
+ages <- filter(ages, V201336 > 0, V201336 < 5, V201507x > 0, V201507x < 80)
 ggplot(ages, aes(x = as.factor(V201336), y = V201507x)) +
   geom_violin(aes(fill = as.factor(V201336))) +
   labs(title = "Americans' opinions on abortion and their ages
@@ -131,7 +131,7 @@ ggplot(neverAge, aes(x = V201507x, y = ..count..)) +
   labs(title = "ppl who think abortion should never be allowed",
        x = "age ranges") +
   scale_x_continuous(breaks = seq(from = 20, to = 80, by = 10)) +
-  annotate("text", x = 37, y = 37, label = "ages inputed as 80 include all people 80 and older")
+  annotate("text", x = 37, y = 37, label = "ages 18-79")
 
 sometimesAge <- filter(ages, V201336 == 2)
 ggplot(sometimesAge, aes(x = V201507x, y = ..count..)) +
@@ -139,7 +139,7 @@ ggplot(sometimesAge, aes(x = V201507x, y = ..count..)) +
   labs(title = "ppl who think abortion should sometimes be allowed",
        x = "age ranges") +
   scale_x_continuous(breaks = seq(from = 20, to = 80, by = 10)) +
-  annotate("text", x = 37, y = 69, label = "ages inputed as 80 include all people 80 and older")
+  annotate("text", x = 37, y = 69, label = "ages 18-79")
 
 mostTimesAge <- filter(ages, V201336 == 3)
 ggplot(mostTimesAge, aes(x = V201507x, y = ..count..)) +
@@ -147,7 +147,7 @@ ggplot(mostTimesAge, aes(x = V201507x, y = ..count..)) +
   labs(title = "ppl who think abortion should be allowed most of the time",
        x = "age ranges") +
   scale_x_continuous(breaks = seq(from = 20, to = 80, by = 10)) +
-  annotate("text", x = 37, y = 37, label = "ages inputed as 80 include all people 80 and older")
+  annotate("text", x = 37, y = 37, label = "ages 18-79")
 
 alwaysAge <- filter(ages, V201336 == 4)
 ggplot(alwaysAge, aes(x = V201507x, y = ..count..)) +
@@ -155,14 +155,35 @@ ggplot(alwaysAge, aes(x = V201507x, y = ..count..)) +
   labs(title = "ppl who think abortion should always be allowed",
        x = "age ranges") +
   scale_x_continuous(breaks = seq(from = 20, to = 80, by = 10)) +
-  annotate("text", x = 37, y = 105, label = "ages inputed as 80 include all people 80 and older")
+  annotate("text", x = 37, y = 105, label = "ages 18-79")
 
+#education level
+edu <- select(anes, V201336, V201510)
+edu <- filter(edu, V201336 > 0, V201336 < 5, V201510 > 0)
+ggplot(edu,aes(x = as.factor(V201336), fill = as.factor(V201510))) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(labels = c("less than highschool credential", "high school graduate", "some college but no degree", "associate degree in college - occupational/vocational", "associate degree in college - academic","bachelor's degree", "master's degree", "professional school degree/doctoral degree", "other"), values = c("red", "orange", "yellow", "chartreuse", "green3", "cyan", "blue", "purple", "magenta"))
 
+#race
+race <- select(anes, V201336, V201549x)
+race <- filter(race, V201336 > 0, V201336 < 5, V201549x > 0)
+ggplot(race,aes(x = as.factor(V201336), fill = as.factor(V201549x))) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(labels = c("white", "black", "hispanic", "AAPI", "native american, indigenous","mixed-raced"), values = c("red", "orange", "yellow", "green3", "blue", "purple", "magenta"))
 
+#children in household
+child <- select(anes, V201336, V201567)
+child <- filter(child, V201336 > 0, V201336 < 5, V201567 >= 0)
+ggplot(child, aes(x = as.factor(V201336), fill = as.factor(V201567))) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(labels = c("none", "1", "2", "3", "4 or more"), values = c("red", "orange", "yellow", "green3", "blue", "purple"))
 
-
-
-
+#sexual orientation
+gay <- select(anes, V201336, V201567)
+gay <- filter(gay, V201336 > 0, V201336 < 5, V201567 > 0)
+ggplot(gay, aes(x = as.factor(V201336), fill = as.factor(V201567))) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(labels = c("straight", "gay/lesbian", "bisexual", "smth else"), values = c("red", "orange", "yellow", "green3"))
 
 
 

@@ -8,8 +8,6 @@ anes <- read.csv("anesplease.csv")
 View(anes)
 
 
-
-
 ## machine learning (idk what i'm doing) ##
 
 #splitting into training, testing, and validation sets
