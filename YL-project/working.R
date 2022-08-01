@@ -5,12 +5,22 @@ library(ggplot2)
 library(tibble)
 
 library(gbm)
+library(RSNNS)
 
-jo <- data %>% filter(V201033 == 5)
-jo %>% select(V201115, V201121, V201124, V201130, V201142, V201136, V201139, V202143, V202144, V201324, V201336) %>% View()
+jo <- data
+jo %>% select(V201033, V201115, V201121, V201124, V201130, V201142, V201136, V201139, V202143, V202144, V201324, V201336) -> jo
+jo_len <- nrow(jo)
+jo$label <- c(rep("train", ceiling(.9*jo_len)), rep("test", ceiling(.1*jo_len)))
+jo_train_x <- jo %>% filter(label=="train") %>% select(V201115, V201121, V201124, V201130, V201142, V201136, V201139, V202143, V202144, V201324, V201336)
+jo_train_y <- jo %>% filter(label=="train") %>% select(V201033)
+jo_model <- mlp(jo_train_x, jo_train_y)
 
+jo_test <- jo %>% filter(label=="test")
+jo_test_x <- jo_test %>% select(V201115, V201121, V201124, V201130, V201142, V201136, V201139, V202143, V202144, V201324, V201336)
 
-
+jo_test_predictions <- predict(jo_model, jo_test_x)
+jo_test$pred <- jo_test_predictions
+View(jo_test %>% select(V201033, pred))
 
 votes_pres <- data %>% filter(V201033 %in% c(1,2) & V201042 %in% c(1,2))
 one.way <- aov(V201033 ~ V201042 + V202175 + V201043y, data=votes_pres)
