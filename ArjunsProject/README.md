@@ -12,4 +12,4 @@ This data is from an American National Election Studies 2020 Time Series Study. 
 
 Null hypothesis: A person's financial situation does not affect the political party that they affiliate with.
 
-Alternate hypothesis: A person's financial situation can affect the political party that they affiliate with.
+Alternate hypothesis: Recent information about a person's financial situation has the most effect on the political party that they affiliate with.
