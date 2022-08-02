@@ -162,10 +162,10 @@ anes_Ctest$race_pred <- race_gbm_Cpreds
 View(anes_Ctest)
 
 #calculating errors 
-lcRMSE <- rmse(anes_Ctest$abortion, anes_Ctest$race_pred)
-lcMAE <- mae(anes_Ctest$abortion, anes_Ctest$race_pred)
-lcRMSE
-lcMAE
+raceRMSE <- rmse(anes_Ctest$abortion, anes_Ctest$race_pred)
+raceMAE <- mae(anes_Ctest$abortion, anes_Ctest$race_pred)
+raceRMSE
+raceMAE
 
 #calculating accuracy
 anes_Ctest <- anes_Ctest %>%
@@ -424,8 +424,28 @@ laccAccuracy
 
 
 
-## chisq test, level of relation
-library(tidyverse)
-?chisq.test()
-glimpse(anesClean)
-chisq.test(anesClean$libCons, anesClean$deathPenalty)
+## visualizing the results
+
+#new dataframe
+results <- data.frame(matrix(ncol = 4, nrow = 13))
+colnames(results) <- c('model_name', 'accuracy', 'rmse', 'mae')
+results$model_name <- c('all vars', 'lib-cons', 'religion', 'race', 'age', 'sex', 'death penalty', 'sexuality', 'top 5 rel inf', 'top 3 rel inf', 'top 2 rel inf', 'highest acc', 'lowest acc')
+results$accuracy <- c(allAccuracy, lcAccuracy, relAccuracy, raceAccuracy, ageAccuracy, sexAccuracy, dpAccuracy, soAccuracy, top5Accuracy, top3Accuracy, top2Accuracy, haccAccuracy, laccAccuracy)
+results$rmse <- c(allRMSE, lcRMSE, relRMSE, raceRMSE, ageRMSE, sexRMSE, dpRMSE, soRMSE, top5RMSE, top3RMSE, top2RMSE, haccRMSE, laccRMSE)
+results$mae <- c(allMAE, lcMAE, relMAE, raceMAE, ageMAE, sexMAE, dpMAE, soMAE, top5MAE, top3MAE, top2MAE, haccMAE, laccMAE)
+View(results)
+
+arrange(results, mae)  
+arrange(results, rmse)  
+arrange(results, desc(accuracy)) 
+
+ggplot(results, aes(x = model_name, y = accuracy, color = 'green3')) +
+  geom_point() +
+  geom_point(aes(y = rmse, color = 'red')) +
+  geom_point(aes(y = mae, color = 'blue')) +
+  labs(title = 'accuracy, mae, and rmse of gbm models',
+       y = 'value',
+       x = 'model',
+       color = '') +
+  scale_color_manual(labels = c('mae', 'accuracy','rmse'), values = c('blue','green3','red')) +
+  theme(axis.text.x = element_text(vjust = 0.2, hjust = 0.8, angle = 90, face = 'bold'))  
