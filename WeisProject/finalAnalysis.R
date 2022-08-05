@@ -448,4 +448,5 @@ ggplot(results, aes(x = model_name, y = accuracy, color = 'green3')) +
        x = 'model',
        color = '') +
   scale_color_manual(labels = c('mae', 'accuracy','rmse'), values = c('blue','green3','red')) +
+  scale_y_continuous(breaks = seq(from = 0, to = 1.1, by = 0.1)) +
   theme(axis.text.x = element_text(vjust = 0.2, hjust = 0.8, angle = 90, face = 'bold'))  

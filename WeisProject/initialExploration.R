@@ -30,8 +30,9 @@ ggplot(dp, aes(x = as.factor(V201345x), fill = as.factor(V201336), position = "d
        x = "opinion on the death penalty",
        y = "count",
        fill = "opinion on abortion") +
-  scale_fill_manual(labels = c("there should be no abortions", "only for cases where woman is in danger", "fine as long as purpose is clearly established","abortion should be allowed no matter what"), values = c("pink", "orange", "light blue", "magenta")) +
+  scale_fill_manual(labels = c("never", "sometimes", "most times","always"), values = c("magenta", "orange", "blue", "green")) +
   scale_x_discrete(labels = c("1" = "favor strongly", "2" = "favor not strongly", "3" = "oppose not strongly", "4" = "oppose strongly"), position = "bottom") +
+  scale_y_continuous(breaks = seq(from = 0, to = 1200, by = 100)) +
   theme(axis.text.x = element_text(face="bold", color="black", angle = 20))
 
 #liberal or conservative abortion opinions
@@ -171,13 +172,17 @@ ggplot(race,aes(x = as.factor(V201336), fill = as.factor(V201549x))) +
   geom_bar(position = "dodge") +
   scale_fill_manual(labels = c("white", "black", "hispanic", "AAPI", "native american, indigenous","mixed-raced"), values = c("red", "orange", "yellow", "green3", "blue", "purple", "magenta"))
 
-#children in household
-child <- select(anes, V201336, V201567)
-child <- filter(child, V201336 > 0, V201336 < 5, V201567 >= 0)
-ggplot(child, aes(x = as.factor(V201336), fill = as.factor(V201567))) +
-  geom_bar(position = "dodge") +
-  scale_fill_manual(labels = c("none", "1", "2", "3", "4 or more"), values = c("red", "orange", "yellow", "green3", "blue", "purple"))
+#blank
+blank <- select(anes, V201336)
+blank <- filter(blank, V201336 > 0, V201336 < 5)
+ggplot(blank, aes(x = as.factor(V201336))) +
+  geom_bar(fill = "purple") +
+  labs(title = "Americans' opinions on abortion in 2020",
+          x = "should abortions be legal?") +
+  scale_x_discrete(labels = c("1" = "never", "2" = "sometimes", "3" = "most times", "4" = "always")) +
 
+  
+  
 #sexual orientation
 gay <- select(anes, V201336, V201567)
 gay <- filter(gay, V201336 > 0, V201336 < 5, V201567 > 0)
