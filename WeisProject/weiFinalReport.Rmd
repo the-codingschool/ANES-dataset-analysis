@@ -14,12 +14,14 @@ The 2020 ANES (American National Election Studies) time series dataset contains 
 
 
 ### Background
-ANES stands for American National Election Studies, the data is gathered from  pre- and post-election surveys taken by Americans via the internet, video call, and phone call. Information gathered from these surveys include:
-* political opinions
-* income
-* vote intention
-* state of registration
-* demographic information
+ANES stands for American National Election Studies, the data is gathered from  pre- and post-election surveys taken by Americans via the internet, video call, and phone call. Information gathered from these surveys include:  
+
+* political opinions  
+* income  
+* vote intention  
+* state of registration  
+* demographic information 
+
 The dataset contains data from 8,280 pre-election surveys and 7,449 post-election surveys conducted in 2020, my research makes use of only the pre-election survey data.
 
 ### Research Question
