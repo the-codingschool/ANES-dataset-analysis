@@ -1,0 +1,58 @@
+---
+title: "Wei's ANES Report 2022 - ANES Abortion Opinion Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##### Wei Dewdney
+
+### Abstract
+The 2020 ANES (American National Election Studies) time series dataset contains data from pre- and post-election surveys. This data contains demographic information as well as political opinions from various respondents, including opinions on abortion, which is what my research focuses on. The supposed main goal behind the anti-abortion movement is preservation of life, as anti-abortionists are considered "pro-life." Logically speaking, pro-lifers should also be against the death penalty if their ideal truly is to preserve life, right? I investigated this question by creating numerous visualisations and found that most pro-lifers are in favour of the death penalty, which raised the question of: what factors really contribute to abortion opinions? Using many gbm models, I found that one's political ideology (liberal or conservative) has the most effect on one's opinion on abortion. Age and religion were the next variables with the highest relative influence, but both were not nearly as impactful on abortion opinions as political ideology. These results are important for understanding different views and the reasoning behind them, as well as increasing social awareness on this relevant issue---especially after the overturning of Roe v Wade.
+
+
+### Background
+ANES stands for American National Election Studies, the data is gathered from  pre- and post-election surveys taken by Americans via the internet, video call, and phone call. Information gathered from these surveys include:
+* political opinions
+* income
+* vote intention
+* state of registration
+* demographic information
+The dataset contains data from 8,280 pre-election surveys and 7,449 post-election surveys conducted in 2020, my research makes use of only the pre-election survey data.
+
+### Research Question
+Are people who are against abortion also against the death penalty due to the logic of "pro-life" ideals? Or is the disapproval of abortion more closely tied to another factor like religion or culture rather than the conservation of life?
+
+### Hypotheses
+**Null**: a person's opinion on abortion and the death penalty are unrelated and have no correlation 
+<br>
+**Alternate**: a person's opinion on abortion and the death penalty are related and not independent of each other since both views are pro-life
+
+### Plots and Figures
+
+```{r, echo=FALSE}
+ 
+```
+
+### Discussion
+
+* What conclusions can you draw from the data?
+* What is the importance of these conclusions? 
+  + What do they mean in the bigger picture? (Apply to greater topic/field)
+* Is there anything different than you expected?
+* Does it support your original hypothesis?
+* What would be some reasonable next steps, or questions you still have?
+
+people who are against abortion are not also inherently against the death penalty, evidence that disapproval of abortion has more motives than conservation of life
+
+A person’s political ideology (liberal or conservative) has a large impact on their opinions on abortion
+
+The impact of other variables such as sex and race on abortion opinions are not as large as they may seem
+
+
+
+
+### Code and Data Availability
+All of my code can be found in the folder titled "WeisProject" in [this GitHub repository](https://github.com/the-codingschool/ANES-dataset-analysis). The raw data can be found as a csv file titled "anesplease.csv" in the same folder. This is the link to the [original dataset](https://electionstudies.org/data-center/2020-time-series-study/); these are the links to the [survey variable guide](https://electionstudies.org/wp-content/uploads/2021/07/anes_timeseries_2020_methodology_userguidecodebook_20210719.pdf) and [non-survey variable guide](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf))
