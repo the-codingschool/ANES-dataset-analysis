@@ -13,12 +13,12 @@ anesClean <- rename(anesClean, abortion = V201336, deathPenalty = V201345x, libC
 anesClean <- filter(anesClean, abortion > 0, abortion < 5, deathPenalty > 0, libCons > 0, libCons < 99, religion > 0, race > 0, sexuality > 0, sex > 0, age > 0, age < 80)
 
 #splitting into subsets
-anes_Clen <- nrow(anesClean)
+anes_Clean <- nrow(anesClean)
 
-anesClean$label <- c(rep("training", ceiling(.6*anes_Clen)),
-                rep("test", ceiling(.2*anes_Clen)),
-                rep("validation", ceiling(.2*anes_Clen))) %>%
-  sample(anes_Clen, replace = F)
+anesClean$label <- c(rep("training", ceiling(.6*anes_Clean)),
+                rep("test", ceiling(.2*anes_Clean)),
+                rep("validation", ceiling(.2*anes_Clean))) %>%
+  sample(anes_Clean, replace = F)
 
 anes_Ctrain <- filter(anesClean, label == "training")
 anes_Ctest <- filter(anesClean, label == "test")
@@ -450,3 +450,5 @@ ggplot(results, aes(x = model_name, y = accuracy, color = 'green3')) +
   scale_color_manual(labels = c('mae', 'accuracy','rmse'), values = c('blue','green3','red')) +
   scale_y_continuous(breaks = seq(from = 0, to = 1.1, by = 0.1)) +
   theme(axis.text.x = element_text(vjust = 0.2, hjust = 0.8, angle = 90, face = 'bold'))  
+
+saveRDS(results, "results")
