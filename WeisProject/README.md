@@ -12,6 +12,172 @@ this is wei's project on the ANES dataset for the coding school summer research 
 
 [dataset guide link (survey variables)](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf) 
 
+### FINALIZED RESEARCH QUESTION AND HYPOTHESIS
+***do people who don't support abortion also not support the death penalty due to the logic of "pro-life" ideals? Or is the disapproval of abortion more closely tied to another factor like religion or culture?*** 
+<br>
+**null**: if someone doesn't support abortion, then they also won't support the death penalty because of their "pro-life" beliefs and no other factors
+<br>
+**my hypothesis**: if someone doesn't support abortion, then they will support the death penalty because their beliefs are tied to religion, not "pro-life" ideals.
+
+### final variables, all pre-election
+* abortion, V201336
+  + refused (-9)
+  + don't know (-8)
+  + By law, abortion should never be permitted (1)
+  + The law should permit abortion only in case of rape, incest, or when the woman’s life is in danger (2)
+  + The law should permit abortion other than for rape/incest/danger to woman but only after need clearly established (3)
+  +  By law, a woman should always be able to obtain an abortion as a matter of personal choice (4)
+  + other (5)
+* importance of abortion, V201337
+  + refused (-9)
+  + don't know (-8)
+  + not at all important (1)
+  + not too important (2)
+  + somewhat important (3)
+  + very important (4)
+  + extremely important (5)
+* reaction if supreme court limited abortion rights, V201342x
+  + DK/RF (-2)
+  + extremely pleased (1)
+  + moderately pleased (2)
+  + a little pleased (3)
+  + neither pleased nor upset (4)
+  + a little upset (5)
+  + moderately upset (6)
+  + extremely upset (7)
+* opinion on death penalty, V201345x 
+  + DK/RF (-2)
+  + favor strongly (1)
+  + favor not strongly (2)
+  + oppose not strongly (3)
+  + oppose strongly (4)
+* lib-cons self scale placement, V201200
+  + refused (-9)
+  + don't know (-8)
+  + extremely liberal (1)
+  + liberal (2)
+  + slightly liberal (3)
+  + moderate; middle of the road (4)
+  + slightly conservative (5)
+  + conservative (6)
+  + extremely conservative (7)
+  + haven't thought much about this (99)
+* religion, V201435
+  + refused (-9)
+  + don't know (-8)
+  + protestant (1)
+  + roman catholic (2)
+  + orthodox christian (3)
+  + latter-day saints (4)
+  + jewish (5)
+  + muslim (6)
+  + buddhist (7)
+  + hindu (8)
+  + athiest (9)
+  + agnostic (10)
+  + something else (11)
+  + nothing in particular (12)
+* sex, V201600
+  + refused (-9)
+  + male (1)
+  + female (2)
+* age (pre), V201507x
+  + refused (-9)
+  + numbers 1-79
+  + 80 years old or older (80)
+* education level (pre), V201510
+  + refused (-9)
+  + don't know (-8)
+  + less than highschool credential (1)
+  + high school graduate (2)
+  + some college but no degree (3)
+  + associate degree in college - occupational/vocational (4)
+  + associate degree in college - academic (5)
+  + bachelor's degree (6)
+  + master's degree (7)
+  + professional school degree/doctoral degree (8)
+  + other (95)
+* race and ethnicity (pre), V201549x
+  + refused (-9)
+  + don't know (-8)
+  + white, non-hispanic (1)
+  + black, non-hispanic (2)
+  + hispanic (3)
+  + asian or native hawaiian/other pacific islander, non-hispanic alone (4)
+  + native american/alaska native or other race, non-hispanic (5) alone
+  + multiple races, non-hispanic (6) 
+* children (pre), V201567
+  + refused (-9)
+  + no children aged 0-17 (0)
+  + one child (1)
+  + two children (2)
+  + three children (3)
+  + four or more children (4)
+* where respondent grew up (pre), V201575
+  + refused (-9)
+  + don't know (-8)
+  + alabama (1)
+  + alaska (2)
+  + arizona (4)
+  + arkansas (5)
+  + california (6)
+  + colorado (8)
+  + connecticut (9)
+  + delaware (10)
+  + washington DC (11)
+  + florida (12)
+  + georgia (13)
+  + hawaii (15)
+  + idaho (16)
+  + illinois (17)
+  + indiana (18)
+  + iowa (19)
+  + kansas (20)
+  + kentucky (21)
+  + louisiana (22)
+  + maine (23)
+  + maryland (24)
+  + massachussetts (25)
+  + michigan (26)
+  + minnesota (27)
+  + mississippi (28)
+  + missouri (29)
+  + montana (30)
+  + nebraska (31)
+  + nevada (32)
+  + new hampshire (33)
+  + new jersey (34)
+  + new mexico (35)
+  + new york (36)
+  + north carolina (37)
+  + north dakota (38)
+  + ohio (39)
+  + oklahoma (40)
+  + oregon (41)
+  + pennsylvania (42)
+  + rhode island (44)
+  + south carolina (45)
+  + south dakota (46)
+  + tennessee (47)
+  + texas (48) 
+  + utah (49)
+  + vermont (50)
+  + virginia (51)
+  + washington (53)
+  + west virginia (54)
+  + wisconsin (55)
+  + wyoming (56)
+  + puerto rico (57)
+  + another US territory (58)
+  + another country (59)
+* sexual orientation (pre), V201601
+  + refused (-9)
+  + interview breakoff (-5)
+  + heterosexual/straight (1)
+  + homosexual/gay/lesbian (2)
+  + bisexual (3)
+  + something else (4)
+
 # research question brainstorm
 * non-survey variables that interest me:
   + state/location, V203001
@@ -31,7 +197,7 @@ this is wei's project on the ANES dataset for the coding school summer research 
   + where respondent grew up (pre), V201575
   + sexual orientation (pre), V201601
   + total family income, V201617x
-  + # of owned guns, V201628
+  + number of owned guns, V201628
   + state of registration, V202054x
   + party of registration, V202065x
   
@@ -173,6 +339,51 @@ this is wei's project on the ANES dataset for the coding school summer research 
   + black scale placement, V202480
   + illegal immigrant scale placement, V202481
   + white scale placement, V202482
+  + stereotype scale (hardworking)
+    + white ppl, V202515
+    + black ppl, V202516
+    + hispanic americans, V202517
+    + hispanic ppl, V202518
+    + asian americans, V202519
+    + asian ppl, V202520
+  + stereotype scale (violent)
+    + white ppl, V202521
+    + black ppl, V202522
+    + hispanic americans, V202523
+    + hispanic ppl, V202524
+    + asian americans, V202525
+    + asian ppl, V202526
+  + discrimination scale
+    + black ppl, V202527
+    + hispanic ppl, V202528
+    + asian ppl, V202529
+    + white ppl, V202530
+    + muslims, V202531
+    + christians, V202532
+    + gays, V202533
+    + women, V202534
+    + men, V202535
+    + transfolk, V202536
+  + discrimination faced because of race/ethnicity, V202537
+  + discrimination faced because of gender, V202538
+  
+## a few questions to think about when writing a research question:
+* Which variable do you want to try to **predict**?
+* What categories do you most want to **distinguish between**?
+* Which independent variables are you interested in investigating their **effects**?
+* What are some ways you can **group the data** or some variables together?
+* What **change** or **difference** are you most interested in?
+  
+  
+## SAMPLE QUESTIONS
+* do republicans and democrats disagree with each other more than they agree with each other or is it the other way around? On what subjects do they agree on, on what subjects do they disagree on, how do other factors like race and gender affect their opinions. For example, are white republicans more conservative than BIPOC republicans?
+* which variables help predict whether someone is a republican or democrat?
+* how does race and gender contribute to income?
+* what demographic trusts the government the most and what demographic trusts the government the least? which variables contribute the greatest to this opinion?
+* do people who dont support abortion also not support the death penalty due to the logic of "pro-life" ideas? Or is the disapproval of abortion tied to another factor like religion or culture?
+* how does religion affect approval of the lgbtq+ community, are there other factors that are of stronger influence?
+* according to each demographic, which race/ethnicity is the most hardworking and which is the most violent, how do the different opinions compare across demographics and within one demographic?
+
   
   
   
