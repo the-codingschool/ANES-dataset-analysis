@@ -1,6 +1,14 @@
 ## Wei's Project
 
+<<<<<<< HEAD
 this is wei's project on the ANES dataset for the coding school summer research program 2022. My mentor is Gustavo. ANES stands for American National Election Studies, the data is gathered from surveys and polls for US eligible voters both pre- and post-election. My project focuses on the topic of opinions on abortion.
+=======
+<<<<<<< HEAD
+this is Wei's project on the ANES dataset for the coding school summer research program 2022. ANES stands for American National Election Studies, the data is gathered from surveys and polls for both pre- and post-election.
+=======
+this is wei's project on the ANES dataset for the coding school summer research program 2022. ANES stands for American National Election Studies, the data is gathered from surveys and polls for US eligible voters both pre- and post-election.
+>>>>>>> f4599772b5c458699f177366faa3081ba960c9b7
+>>>>>>> ac9834884d46b2409b6e1e1513915167eb5a26f8
 
 [dataset link](https://electionstudies.org/data-center/2020-time-series-study/)
 
