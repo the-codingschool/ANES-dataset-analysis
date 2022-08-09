@@ -7,7 +7,7 @@ output:
 ---
 
 #### <br> Abstract <br>
-The ANES 2020 Time Series Study is an election study conducted to support analysis of public opinion and voting behavior in U.S. presidential elections.` Created by the American National Election Studies (ANES), the data set consists of information from 8,280 pre-election interviews and 7,449 post-election interviews given to U.S. eligible voters. The study provides information about a respondents financial situation and the political party that they registered with, which allows for the analysis of if a person's financial situation can affect the political party that they affiliate with. It also allows the analysis of what financial factors have the largest influence on the political party a person affiliates with. This is important because it can help us make more accurate election poll predictions based on the financial situation of citizens. I used columns V201018, V201502, V201503, and V201594 of the data set, which allowed me to only focus on information about the political party and financial situation of the respondents. I grouped the data to only contain the information of respondents who affiliated with the Democratic party or the Republican party. I ran multiple Chi-squared tests on the political party of 1,558 respondents and different financial factors to determine the significance of each factor compared to the political party. I found that a person's financial situation compared to 1 year ago, financial situation next year, and how worried they are about their current financial situation, are all significant factors. I also found that the factor with the highest significance is how worried a person is about their current financial situation. This means that all of these factors affect the political party that a person affiliates with and the level of worry that a person has about their current financial situation has the largest influence on the political party of the person. These findings are important because they show how political parties can have a financial bias.
+The ANES 2020 Time Series Study is an election study conducted to support analysis of public opinion and voting behavior in U.S. presidential elections.` Created by the American National Election Studies (ANES), the data set consists of information from 8,280 pre-election interviews and 7,449 post-election interviews given to U.S. eligible voters. The study provides information about a respondents financial situation and the political party that they registered with, which allows for the analysis of if a person's financial situation can affect the political party that they affiliate with. It also allows the analysis of what financial factors have the largest influence on the political party a person affiliates with. This is important because it can help us make more accurate election poll predictions based on the financial situation of citizens. I used columns V201018, V201502, V201503, and V201594 of the data set, which allowed me to only focus on information about the political party and financial situation of the respondents. I grouped the data to only contain the information of respondents who affiliated with the Democratic party or the Republican party. I ran multiple Chi-squared tests on the political party of 1,558 respondents and different financial factors to determine the significance of each factor compared to the political party. I found that a person's financial situation compared to 1 year ago, financial situation next year, and how worried they are about their current financial situation, are all significant factors. I also found that the factor with the highest significance is how worried a person is about their current financial situation. This means that all of these factors affect the political party that a person affiliates with and the level of worry that a person has about their current financial situation has the largest influence on the political party of the person. These findings are important because they show how political parties can have a financial bias. Following that, I created multiple variations of gradient boosting models using the financial variables that were significant. Using gradient boosting models, I was able to determine that the most accurate model used a person's financial situation compared to 1 year ago and how worried they are about their current financial situation. These findings are also important because they show that more recent information about a person's financial situation has a larger impact on their political affiliation.
 
 #### <br> Background <br>
 The ANES 2020 Time Series Study is an election study conducted to support analysis of public opinion and voting behavior in U.S. presidential elections. This data is only from the year 2020. It consists of information including:
@@ -21,6 +21,50 @@ Does a person's financial situation affect the political party that they affilia
 Null: A person's financial situation has no significant effect on the political party that they affiliate with.
 
 Alternate: A person's financial situation has a significant effect on the political party that they affiliate with and recent information about a person's financial situation has the largest influence.
+
+#### <br> Figure 1: Financial Situation Compared to 1 Year Ago by Political Party
+```{r echo = F, fig.width=10}
+ggplot(data = anes_finance, aes(x = one_year_ago, y = ..count.., fill = registration_party)) +
+  geom_bar(position = "dodge", color = "black") +
+  scale_y_log10() +
+  labs(x = "Financial Situation Compared to 1 Year Ago",
+       y = "Number of Respondants",
+       fill = "Political Party")
+```
+This plot shows the financial situation of respondents compared to 1 year ago by political party. The red bars represent the number of respondents who affiliated with the Democratic party for each choice. The blue bars represent the number of respondents who affiliated with the Republican party for each choice. As the positivity of the choices increased, the difference between the number of people affiliated with the Republican party and the number of people affiliated with the Democratic party decreased.
+
+#### <br> Figure 2: Financial Situation Next Year by Political Party
+```{r echo = F, fig.width=10}
+ggplot(data = anes_finance, aes(x = next_year, y = ..count.., fill = registration_party)) +
+  geom_bar(position = "dodge", color = "black") +
+  scale_y_log10() +
+  labs(x = "Financial Situation Next Year",
+       y = "Number of Respondants",
+       fill = "Political Party")
+```
+This plot shows the expected financial situation of respondents next year by political party. The red bars represent the number of respondents who affiliated with the Democratic party for each choice. The blue bars represent the number of respondents who affiliated with the Republican party for each choice. As the positivity of the choices increased, the difference between the number of people affiliated with the Republican party and the number of people affiliated with the Democratic party decreased.
+
+#### <br> Figure 3: How Worried About Financial Situation by Political Party
+```{r echo = F, fig.width=10}
+ggplot(data = anes_finance, aes(x = current_situation, y = ..count.., fill = registration_party)) +
+  geom_bar(position = "dodge", color = "black") +
+  scale_y_log10() +
+  labs(x = "How Worried About Financial Situation",
+       y = "Number of Respondants",
+       fill = "Political Party")
+```
+This plot shows how worried a respondent was about their current financial situation by political party. The red bars represent the number of respondents who affiliated with the Democratic party for each choice. The blue bars represent the number of respondents who affiliated with the Republican party for each choice. As the positivity of the choices increased, the difference between the number of people affiliated with the Republican party and the number of people affiliated with the Democratic party decreased.
+
+#### <br> Figure 4: Accuracy of Gradient Boosting Models
+```{r echo = F, fig.width=10}
+ggplot(data = accuracy_data, aes(x = model_names, y = accuracies, fill = model_names)) +
+  geom_bar(stat = "identity") +
+  theme(legend.position= "none")
+```
+This plot compares the accuracies of different gradient boosting models. The different bar colors represent different models, which varied in what variables were used to create the model. The yellow bar represents model 2, which was the most accurate model. This model used a person's financial situation compared to 1 year ago and how worried they are about their current financial situation, which means that these variables had the largest impact on a person's political affiliation.
+
+#### <br> Discussion <br>
+From the data, I can conclude that all of the financial variables I focused on had a significant effect on a person's political affiliation. I can also conclude that variables that contained more recent information had the largest impact on a person's political party. This conclusion is important because it can help us make more accurate election poll predictions based on the average financial situation of an area. Something different than I expected was that a person's expected financial situation next year did not play as large of a role in the political party they affiliate with than I originally thought. Although my results did support my hypothesis, a question I think would be important to ask in the future is if the location of citizens affects how their financial situation might influence the political party they affiliate with?
 
 
 #### <br> Code Availability and Data Availability <br>
