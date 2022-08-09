@@ -1,0 +1,31 @@
+---
+title: 'ANES Dataset Analysis: Party of registration and financial situation'
+author: "Analysis by Arjun Airen"
+output:
+  html_document:
+    df_print: paged
+---
+
+#### <br> Abstract <br>
+The ANES 2020 Time Series Study is an election study conducted to support analysis of public opinion and voting behavior in U.S. presidential elections.` Created by the American National Election Studies (ANES), the data set consists of information from 8,280 pre-election interviews and 7,449 post-election interviews given to U.S. eligible voters. The study provides information about a respondents financial situation and the political party that they registered with, which allows for the analysis of if a person's financial situation can affect the political party that they affiliate with. It also allows the analysis of what financial factors have the largest influence on the political party a person affiliates with. This is important because it can help us make more accurate election poll predictions based on the financial situation of citizens. I used columns V201018, V201502, V201503, and V201594 of the data set, which allowed me to only focus on information about the political party and financial situation of the respondents. I grouped the data to only contain the information of respondents who affiliated with the Democratic party or the Republican party. I ran multiple Chi-squared tests on the political party of 1,558 respondents and different financial factors to determine the significance of each factor compared to the political party. I found that a person's financial situation compared to 1 year ago, financial situation next year, and how worried they are about their current financial situation, are all significant factors. I also found that the factor with the highest significance is how worried a person is about their current financial situation. This means that all of these factors affect the political party that a person affiliates with and the level of worry that a person has about their current financial situation has the largest influence on the political party of the person. These findings are important because they show how political parties can have a financial bias.
+
+#### <br> Background <br>
+The ANES 2020 Time Series Study is an election study conducted to support analysis of public opinion and voting behavior in U.S. presidential elections. This data is only from the year 2020. It consists of information including:
+- financial situation characteristics
+- political views of respondents
+
+#### <br> Research Question <br>
+Does a person's financial situation affect the political party that they affiliate with, and what factors have the largest influence?
+
+#### <br> Hypotheses <br>
+Null: A person's financial situation has no significant effect on the political party that they affiliate with.
+
+Alternate: A person's financial situation has a significant effect on the political party that they affiliate with and recent information about a person's financial situation has the largest influence.
+
+
+#### <br> Code Availability and Data Availability <br>
+The code used in these analyses are in the GitHub repository [ANES-dataset-analysis](https://github.com/the-codingschool/ANES-dataset-analysis). My analyses are in `ANES-dataset-analysis/ArjunsProject` folder. The R markdown file used to create this report is in that folder under the name `written_report.Rmd`, and includes all of the code to reproduce these plots.
+
+The dataset used for analysis can be found in `ANES-dataset-analysis/data`. More information about the data can be found [here](https://electionstudies.org/data-center/2020-time-series-study/).
+
+
