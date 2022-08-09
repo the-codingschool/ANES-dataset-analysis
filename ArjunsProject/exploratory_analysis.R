@@ -114,25 +114,20 @@ anes_finance_test$gbm_pred <- anes_finance_gbm_preds
 anes_finance_test <- mutate(anes_finance_test, party_pred7 = ifelse(gbm_pred < 0, "Democratic party", "Republican party"))
 
 ## Evaluate performance of models
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred1) # one_year_ago, next_year, current_situation
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred2) # one_year_ago, current_situation, most accurate
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred3) # next_year, current_situation
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred4) # one_year_ago, next_year
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred5) # one_year_ago
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred6) # next_year
-accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred7) # current_situation
+model1_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred1) # one_year_ago, next_year, current_situation
+model2_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred2) # one_year_ago, current_situation, most accurate
+model3_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred3) # next_year, current_situation
+model4_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred4) # one_year_ago, next_year
+model5_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred5) # one_year_ago
+model6_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred6) # next_year
+model7_accuracy <- accuracy(anes_finance_test$registration_party, anes_finance_test$party_pred7) # current_situation
 
-## Apply model 2 to validation set
-anes_finance_gbm <- gbm(party_num ~ one_year_ago + current_situation,
-                        data = anes_finance_train,
-                        n.trees = 500)
+accuracies <- c(model1_accuracy, model2_accuracy, model3_accuracy, model4_accuracy, model5_accuracy, model6_accuracy, model7_accuracy)
+model_names <- c("Model 1", "Model 2", "Model 3", "Model 4", "Model 5", "Model 6", "Model 7")
 
-anes_finance_gbm_preds <- anes_finance_valid %>%
-  select(one_year_ago, current_situation) %>%
-  predict(object = anes_finance_gbm)
+accuracy_data <- data.frame(accuracies, model_names)
 
-anes_finance_valid$gbm_pred <- anes_finance_gbm_preds
+ggplot(data = accuracy_data, aes(x = model_names, y = accuracies, fill = model_names)) +
+  geom_bar(stat = "identity") +
+  theme(legend.position= "none")
 
-anes_finance_valid <- mutate(anes_finance_valid, party_pred = ifelse(gbm_pred < 0, "Democratic party", "Republican party"))
-
-accuracy(anes_finance_valid$registration_party, anes_finance_valid$party_pred)
