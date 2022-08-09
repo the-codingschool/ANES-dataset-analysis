@@ -29,7 +29,7 @@ ggplot(data = anes_finance, aes(x = one_year_ago, y = ..count.., fill = registra
   scale_y_log10() +
   labs(x = "Financial Situation Compared to 1 Year Ago",
        y = "Number of Respondants",
-       fill = "Party of Registration")
+       fill = "Political Party")
 
 ggplot(data = anes_finance, aes(x = next_year, y = ..count.., fill = registration_party)) +
   geom_bar(position = "dodge", color = "black") +
@@ -43,7 +43,7 @@ ggplot(data = anes_finance, aes(x = current_situation, y = ..count.., fill = reg
   scale_y_log10() +
   labs(x = "How Worried About Financial Situation",
        y = "Number of Respondants",
-       fill = "Party of Registration")
+       fill = "Political Party")
 
 anes_finance <- anes_finance %>% group_by(one_year_ago, registration_party) %>% summarise(n = n())
 
